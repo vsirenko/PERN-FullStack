@@ -1,10 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import Ract from 'react';
 
-function App() {
-  return (
-<>hi</>
-  );
+
+const App = () => {
+  return(<>hi</>)
 }
 
 export default App;
