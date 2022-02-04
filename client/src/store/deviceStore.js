@@ -4,11 +4,29 @@ export default class DeviceStore {
     constructor() {
         this._types = [
             {
-                id: 1, name: 'Survival',
+                id: 1, name: 'ЭКШЕН',
             },
             {
-                id: 2, name: 'Sandbox',
-            }
+                id: 2, name: 'РОЛЕВЫЕ',
+            },
+            {
+                id: 3, name: 'ПРИКЛЮЧЕНИЯ',
+            },
+            {
+                id: 4, name: 'СТРАТЕГИИ',
+            },
+            {
+                id: 5, name: 'СИМУЛЯТОРЫ',
+            },
+            {
+                id: 6, name: 'ОНЛАЙН',
+            },
+            {
+                id: 7, name: 'ИНДИ',
+            },
+            {
+                id: 8, name: 'СПОРТ',
+            },
         ];
         this._brands = [
             {
@@ -24,7 +42,12 @@ export default class DeviceStore {
             {id: 3, name: 'Iphone', price: 2500, rating: 5, img: ``},
             {id: 4, name: 'Iphone', price: 2500, rating: 5, img: ``},
         ];
+        this._selectedType = {};
         makeAutoObservable(this);
+    }
+
+    setSelectedType(type) {
+        this._selectedType = type;
     }
 
     setTypes(types) {
@@ -45,5 +68,8 @@ export default class DeviceStore {
     }
     get devices() {
         return this._devices;
+    }
+    get selectedType() {
+        return this._selectedType;
     }
 }
