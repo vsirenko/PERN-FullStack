@@ -37,17 +37,23 @@ export default class DeviceStore {
             }
         ];
         this._devices = [
-            {id: 1, name: 'Iphone', price: 2500, rating: 5, img: ``},
-            {id: 2, name: 'Iphone', price: 2500, rating: 5, img: ``},
-            {id: 3, name: 'Iphone', price: 2500, rating: 5, img: ``},
-            {id: 4, name: 'Iphone', price: 2500, rating: 5, img: ``},
+            {id: 1, name: 'TOM CLANCYS RAINBOW SIX SIEGE', price: 2500, rating: 5, img: `https://static.gabestore.ru/product/0_j1Ci2n2Vnd2zVuX4WATB4juk1xtRzq.jpg`},
+            {id: 2, name: 'GRAND THEFT AUTO V: PREMIUM ONLINE EDITION', price: 2500, rating: 5, img: `https://static.gabestore.ru/product/_j7jVtprTbPuXbtnJsoGmTMEc3tM7sbI.jpg`},
+            {id: 3, name: 'RED DEAD REDEMPTION 2', price: 2500, rating: 5, img: `https://static.gabestore.ru/product/_i7m56e9JTZ0uhdNiaotedfAfQSa93xQ.jpg`},
+            {id: 4, name: 'FAR CRY 5', price: 2500, rating: 5, img: `https://static.gabestore.ru/product/cWiz77h6dlKn4E10q3zVTp2DkMbB_hFl.jpg`},
         ];
         this._selectedType = {};
+        this._selectedBrand = {};
+
         makeAutoObservable(this);
     }
 
     setSelectedType(type) {
         this._selectedType = type;
+    }
+
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand;
     }
 
     setTypes(types) {
@@ -71,5 +77,8 @@ export default class DeviceStore {
     }
     get selectedType() {
         return this._selectedType;
+    }
+    get selectedBrand() {
+        return this._selectedBrand;
     }
 }
