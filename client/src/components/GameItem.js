@@ -4,10 +4,9 @@ import {useNavigate} from "react-router-dom";
 import { DEVICE_ROUTE } from '../utils/consts';
 
 const GameItem = ({game}) => {
-    const history = useNavigate()
-    console.log(history);
+    const navigate = useNavigate()
   return (
-      <Col md={3} className={'mt-3'} onClick={() => history(DEVICE_ROUTE + '/' + game.id)}>
+      <Col md={3} className={'mt-3'} onClick={() => navigate(DEVICE_ROUTE + '/' + game.id)}>
          <Card style={{width: 200, cursor: 'pointer'}} border={"light"}>
                 <Image  src={game.img}/>
                 <div className="text-black-50 mt-1 d-flex justify-content-between align-items-center">

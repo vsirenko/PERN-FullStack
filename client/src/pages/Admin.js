@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button, Container } from 'react-bootstrap';
+import CreateBrand from '../components/modals/CreateBrand';
+import CreateItem from '../components/modals/CreateItem';
+import CreateType from '../components/modals/CreateType';
 
 
 const Admin = () => {
-  return(<>Admin</>)
+    const [hideBrand, setHideBrand] = useState(false)  
+    const [hideType, setHideType] = useState(false)
+    const [hideItem, setHideItem] = useState(false)
+  
+  return(
+    <Container className='mt-4'>
+      <Button variant={'outline-dark'} onClick={() => setHideType(!hideType)} style={{marginRight: '40px'}}>Добавить тип</Button>
+      <Button variant={'outline-dark'} onClick={() => setHideBrand(!hideBrand)} style={{marginRight: '40px'}}>Добавить бренд</Button>
+      <Button variant={'outline-dark'} onClick={() => setHideItem(!hideItem)} style={{marginRight: '40px'}}>Добавить игру</Button>
+      <CreateBrand show={hideBrand} onHide={() => setHideBrand(false)}/>
+      <CreateItem show={hideItem} onHide={() => setHideItem(false)}/>
+      <CreateType show={hideType} onHide={() => setHideType(false)}/>
+    </Container>
+  )
 }
 
 export default Admin;
